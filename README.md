@@ -4,13 +4,13 @@ Data includes airline reviews from 2006 to 2019 for popular airlines around the 
 Feature descriptions briefly as follows: airline: Name of the airline.  
 overall: Overall point is given to the trip between 1 to 10.  
 author: Author of the trip  
-reviewdate: Date of the Review customer review: Review of the customers in free text format  
-aircraft: Type of the aircraft  
-travellertype: Type of traveler (e.g. business, leisure)
-cabin: Cabin at the flight date flown: Flight date
-seatcomfort: Rated between 1-5
-cabin service: Rated between 1-5
-foodbev: Rated between 1-5 entertainment: Rated between 1-5
-groundservice: Rated between 1-5
-valueformoney: Rated between 1-5
-recommended: Binary, target variable.
+reviewdate: Date of the Review customer review: Review of the customers in free text format    
+aircraft: Type of the aircraft    
+travellertype: Type of traveler (e.g. business, leisure)  
+cabin: Cabin at the flight date flown: Flight date  
+seatcomfort: Rated between 1-5  
+cabin service: Rated between 1-5  
+foodbev: Rated between 1-5 entertainment: Rated between 1-5  
+groundservice: Rated between 1-5  
+valueformoney: Rated between 1-5  
+recommended: Binary, target variable.  
