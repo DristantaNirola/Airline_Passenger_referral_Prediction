@@ -2,20 +2,21 @@
 PROJECT ON
 AIRLINE REFERRAL PREDICTION
 
-CHAPTER 1- OBJECTIVES AND INTRODUCTION
+## CHAPTER 1- OBJECTIVES AND INTRODUCTION
 
-1.1 INTRODUCTION
+### 1.1 INTRODUCTION
 
 Any child who sees a plane in the sky fantasises about riding in it. Traveling by plane has become a
 craze, and as an adult, one will consider taking care of the experience. As a result, the opinions of
 those who have travelled have become increasingly important. This improved people&#39;s positive
 travel experiences, as well as the airlines&#39; ability to understand what their customers are feeling and
-this increased the amount of room for improvement that airlines can do.
+this increased the amount of room for improvement that airlines can do.  
 Skytrax https://www.airlinequality.com/ is one of the leading air transport organizations. It is an
 international air transport rating organisation headquartered in the United Kingdom whose goal is
 to boost airline and airport customer experiences around the world. Person feedback left by
 confirmed customers of most of the world&#39;s major airlines make up the dataset.
-1.2 OBJECTIVE :
+
+### 1.2 OBJECTIVE :
 The main objective of this project is to predict whether passengers will refer the airline to their
 friends. In this project we deployed multiple machine learning models to see the performance.
 
@@ -29,7 +30,7 @@ Section 5 - Working different models
 Section 6 - Evaluating model
 Section 7 - Conclusions
 
-CHAPTER 2 - UNDERSTANDING DATA AND DATA PREPARATION
+## CHAPTER 2 - UNDERSTANDING DATA AND DATA PREPARATION
 2.1 UNDERSTANDING DATA:
 
 This snapshot is taken from the skytrax website. The customer who travelled can give reviews and
@@ -51,14 +52,14 @@ value for money: Rated between 1-5
 recommended: Binary, target variable.
 
 Mount the drive and load the file
-# Mounting drive
+### Mounting drive
 from google.colab import drive
 drive.mount(&#39;/content/drive&#39;)
 missing_values = [&#39;N/a&#39;, &#39;na&#39;, &#39;np-nan&#39;, ‘None’, ‘none’]
 After mounting the drive the next step is to import the required libraries. Python has a wide number
 of libraries which makes the work easier. Here pandas, numpy, matplotlib, seaborn, math, nltk,
 sklearn etc., libraries are used.
-# importing libraries
+### importing libraries
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -85,25 +86,25 @@ data.shape
 The shape of data is (131895,17)
 
 The next step after seeing this dataset is to check the number of null values.
-# Checking for null values
+### Checking for null values
 data.isnull().sum()
 The data set contains a higher number of null values. Data cleaning has become highly essential.
 2.2 PREPARING DATA
 In this step the first foremost thing we are interested in is cleaning data.
 1. Dropping rows having entire row as Nan
-# Dropping rows if the entire row is null
+### Dropping rows if the entire row is null
 data.dropna(how = &#39;all&#39;,inplace = True)
 Looks like all the odd rows are left empty in excel so the no.of rows having complete Nan in the row
 are more.
 2. Dropping columns which don&#39;t add value for the analysis
-# Removing columns that are not required
+### Removing columns that are not required
 data.drop(columns = [&#39;aircraft&#39;,&#39;author&#39;],inplace = True)
 
 The Reason behind dropping aircraft are
 1. This column has null values more than 80%
 2. There are more than 2000 distinct values. As a result we cannot draw any value out of it.
 To make the columns names understandable they are renamed
-# Renaming columns
+### Renaming columns
 data.rename(columns={&#39;overall&#39;:&#39;review_score&#39;, &#39;customer_review&#39;:&#39;review_text&#39;}, inplace=True)
 3. Dropping duplicates
 #Dropping the duplicates by keeping the first occurence
@@ -130,7 +131,7 @@ Shape - (61183,15)
 To impute these null values we need to do some plotting. To understand the data more. In the next
 chapter that is performed.
 
-CHAPTER 3 - EXPLORATORY DATA ANALYSIS
+## CHAPTER 3 - EXPLORATORY DATA ANALYSIS
 
 The primary goal of EDA is to support the analysis of data prior to making any conclusions. It may
 aid in the detection of apparent errors, as well as a deeper understanding of data patterns, the
@@ -142,7 +143,7 @@ def scaled_feature(feature_to_be_scaled):
 &#39;&#39;&#39;scaling entire column by multiplying by 2 so that all ratings are given out of 10&#39;&#39;&#39;
 airline_data[feature_to_be_scaled] = airline_data[feature_to_be_scaled]*2
 
-3.1 STACKED PLOTS
+### 3.1 STACKED PLOTS
 #Stacked plot of rating features
 def stacked_plot(feat):
 &#39;&#39;&#39; Stacked plot of rating features&#39;&#39;&#39;
