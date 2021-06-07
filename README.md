@@ -1,4 +1,4 @@
-# Airline_Passenger_referral_Prediction
+# Airline_Passenger_Referral_Prediction
 PROJECT ON
 AIRLINE REFERRAL PREDICTION
 
